@@ -19,9 +19,9 @@ int main(){
     cout<<"Bit_depth:"<<img.bmInfoHeader.biBitCount<<" Bits"<<endl;
     cout<<"Compression:"<<img.bmInfoHeader.biCompression<<endl;
     cout<<"SizeImage:"<<img.bmInfoHeader.biSizeImage<<" Bytes"<<endl;
-    cout<<"XPelsPerMeter:"<<img.bmInfoHeader.biXPelsPerMeter<<" px/meter"<<endl;
-    cout<<"YPelsPerMeter:"<<img.bmInfoHeader.biYPelsPerMeter<<" px/meter"<<endl;
+    cout<<"XPelsPerMeter:"<<img.bmInfoHeader.biXPelsPerMeter<<" px per meter"<<endl;
+    cout<<"YPelsPerMeter:"<<img.bmInfoHeader.biYPelsPerMeter<<" px per meter"<<endl;
     
-
+    cin.get(); 
     return 0;
 }

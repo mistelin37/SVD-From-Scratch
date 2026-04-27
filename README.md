@@ -21,28 +21,35 @@
 ## 可视化成果
 
 * BMP写入器，按照像素点书写一个符合格式的BMP文件（可以直接使用解码器打开）
-* 几天内会做一个读入后的基本信息展示，可视化展示读入效果
+* BMP读取器，显示读入图片的基本信息
 
 ## 编译方法
 
-```bash
-# 使用 g++ 编译
-g++ *.cpp -o svd.exe
-
-# 或使用 VSCode 按 Ctrl+Shift+B
-```
+* 使用 VSCode 按 Ctrl+Shift+B
 
 ## 使用方法
 
-* 双击svd.exe文件运行，在当前目录下生成out.bmp文件
+* BMP写入器：双击bmpWrite.exe文件运行，在当前目录下生成out.bmp文件
+* BMP读取器：
+  * 在当前目录下准备一张24位真彩位图文件，命名为img1.bmp。
+  * 双击bmpRead.exe文件运行，在终端查看输出
 
 ## 预期效果
 
-* out.bmp可以用任何图片查看器打开，图片RGB符合参数方程，其中$x$,$y$是坐标，$y$坐标反向（自下向上为正方向）
+* BMP写入器：out.bmp可以用任何图片查看器打开，图片RGB符合参数方程，其中$x$,$y$是坐标，$y$坐标反向（自下向上为正方向）
 
 $$
 R = \frac{x + y}{2}, \quad G = x, \quad B = y
-
 $$
 
+* BMP读取器：终端中输出文件img1.bmp的如下字段：
+  Format: 格式
+  File_size: 文件大小
+  Width: 图片宽度
+  Height: 图片高度
+  Bit_depth: 位深度
+  Compression: 压缩格式
+  Sizeimage: 颜色数据大小
+  XPelsPerMeter: 横向分辨率
+  YPelsPerMeter: 纵向分辨率
 * 注：源文件bmp.cpp中，BMPcolorWrite函数控制写入的颜色，有需要者可以修改代码
