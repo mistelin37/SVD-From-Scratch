@@ -20,8 +20,6 @@ int main(){
     cout<<"Compression:"<<img.bmInfoHeader.biCompression<<endl;
     cout<<"SizeImage:"<<img.bmInfoHeader.biSizeImage<<" Bytes"<<endl;
     cout<<"XPelsPerMeter:"<<img.bmInfoHeader.biXPelsPerMeter<<" px per meter"<<endl;
-    cout<<"YPelsPerMeter:"<<img.bmInfoHeader.biYPelsPerMeter<<" px per meter"<<endl;
-    
-    cin.get(); 
+    cout<<"YPelsPerMeter:"<<img.bmInfoHeader.biYPelsPerMeter<<" px per meter"<<endl; 
     return 0;
 }

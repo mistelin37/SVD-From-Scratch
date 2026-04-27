@@ -1,0 +1,2 @@
+.\bin\bmpRead.exe
+pause
