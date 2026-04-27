@@ -2,28 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build current main",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-g",
-                "${workspaceFolder}/*.cpp",
+                "${file}",                    // 当前打开的 main 文件
+                "bmp.cpp",                    // 固定的源文件
                 "-o",
-                "${workspaceFolder}/svd.exe"
+                "${fileDirname}/${fileBasenameNoExtension}.exe"  // 输出与当前文件同名
             ],
-            "group": "build",
-            "problemMatcher": ["$gcc"]
-        },
-        {
-            "label": "run",
-            "type": "shell",
-            "command": "${workspaceFolder}/svd.exe",
-            "dependsOn": ["build"],
             "group": {
-                "kind": "test",
+                "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": []
+            "problemMatcher": ["$gcc"],
+            "detail": "编译当前main文件和所有源文件"
         }
     ]
 }

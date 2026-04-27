@@ -1,0 +1,16 @@
+# 编译产物
+*.exe
+*.exe~
+*.o
+*.obj
+
+# 生成的图片
+out.bmp
+
+# 临时文件
+*.tmp
+*.log
+
+# Windows 系统文件
+Thumbs.db
+desktop.ini

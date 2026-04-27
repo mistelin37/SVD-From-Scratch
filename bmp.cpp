@@ -94,7 +94,7 @@ void BMPcolorWrite(BMPIMAGE& img, int32_t xx, int32_t yy){
             img.bmColor.push_back(colorG);
             img.bmColor.push_back(colorR);
         }
-        for(int j=1;j<=(4-(xx*yy*3)%4)%4;j++){
+        for(int j=1;j<=(4-(yy*3)%4)%4;j++){//宽度对齐
             img.bmColor.push_back(0);
         }
     }
