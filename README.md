@@ -43,13 +43,13 @@ R = \frac{x + y}{2}, \quad G = x, \quad B = y
 $$
 
 * BMP读取器：终端中输出文件img1.bmp的如下字段：
-  Format: 格式
-  File_size: 文件大小
-  Width: 图片宽度
-  Height: 图片高度
-  Bit_depth: 位深度
-  Compression: 压缩格式
-  Sizeimage: 颜色数据大小
-  XPelsPerMeter: 横向分辨率
-  YPelsPerMeter: 纵向分辨率
+  * Format: 格式
+  * File_size: 文件大小
+  * Width: 图片宽度
+  * Height: 图片高度
+  * Bit_depth: 位深度
+  * Compression: 压缩格式
+  * Sizeimage: 颜色数据大小
+  * XPelsPerMeter: 横向分辨率
+  * YPelsPerMeter: 纵向分辨率
 * 注：源文件bmp.cpp中，BMPcolorWrite函数控制写入的颜色，有需要者可以修改代码
