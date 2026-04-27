@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include "bmp.h"
+#include "matrix.h"
 
 using namespace std;
 
@@ -78,18 +79,19 @@ void BMPread(ifstream& file, BMPIMAGE& img){
 
 }
 
-void BMPcolorWrite(BMPIMAGE& img, int32_t xx, int32_t yy){
+void BMPcolorWrite(BMPIMAGE& img, matrix R,matrix G,matrix B){
+    int xx=R.x,yy=R.y;
     img.bmFileHeader.bfSize = 14+40+xx*yy*3;
     img.bmInfoHeader.biWidth = yy;
     img.bmInfoHeader.biHeight = xx;
 
     uint8_t colorB,colorG,colorR;
     img.bmColor.clear();
-    for(int i=0;i<xx;i++){
-        for(int j=0;j<yy;j++){
-            colorB=i;
-            colorG=j;
-            colorR=(i+j)/2;
+    for(int i=1;i<=xx;i++){
+        for(int j=1;j<=yy;j++){
+            colorB=B(i,j);
+            colorG=G(i,j);
+            colorR=R(i,j);
             img.bmColor.push_back(colorB);
             img.bmColor.push_back(colorG);
             img.bmColor.push_back(colorR);

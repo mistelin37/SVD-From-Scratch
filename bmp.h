@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include "matrix.h"
 
 using namespace std;
 
@@ -42,4 +43,4 @@ void readValue(ifstream& file, T& value) {
 void BMPIMG24CLR(BMPIMAGE& img);
 void BMPwrite(ofstream& file, BMPIMAGE& img);
 void BMPread(ifstream& file, BMPIMAGE& img);
-void BMPcolorWrite(BMPIMAGE& img, int32_t xx, int32_t yy);
+void BMPcolorWrite(BMPIMAGE& img, matrix R,matrix G,matrix B);

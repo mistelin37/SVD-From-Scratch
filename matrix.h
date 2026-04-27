@@ -1,3 +1,6 @@
+#ifndef MATRIX_H
+#define MATRIX_H
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -16,7 +19,7 @@ struct matrix{
     void print(){
         for(int i=1;i<=x;i++){
             for(int j=1;j<=y;j++){
-                cout<<(*this)(i,j)<<" ";
+                cout<<round((*this)(i,j))<<"\t";
             }
             cout<<endl;
         }
@@ -67,4 +70,14 @@ struct matrix{
                 ans(j,i)=(*this)(i,j);
         return ans;        
     }
+    double abs(){
+        double ans=0;
+        for(int i=1;i<=x;i++) 
+            for(int j=1;j<=y;j++) 
+                ans+=(*this)(i,j)*(*this)(i,j);
+
+        return sqrt(ans);
+    }
 };
+
+#endif
