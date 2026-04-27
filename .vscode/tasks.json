@@ -7,11 +7,12 @@
             "command": "g++",
             "args": [
                 "-g",
+                "-I${workspaceFolder}/include",
+                "${workspaceFolder}/src/bmp.cpp",
+                "${workspaceFolder}/src/svd.cpp",
                 "${file}",                    // 当前打开的 main 文件
-                "bmp.cpp",
-                "svd.cpp",                    // 固定的源文件
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe"  // 输出与当前文件同名
+                "${workspaceFolder}/bin/${fileBasenameNoExtension}.exe"  // 输出与当前文件同名
             ],
             "group": {
                 "kind": "build",

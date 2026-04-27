@@ -6,8 +6,8 @@
 using namespace std;
 
 int main(){
-    ifstream input("img1.bmp", std::ios::binary);
-    ofstream output("out.bmp", std::ios::binary);
+    ifstream input("./img/img1.bmp", std::ios::binary);
+    ofstream output("./img/out.bmp", std::ios::binary);
     BMPIMAGE img;
     int x=16;
     int y=16;

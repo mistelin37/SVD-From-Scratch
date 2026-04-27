@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-    ifstream file("img1.bmp", std::ios::binary);
+    ifstream file("./img/img1.bmp", std::ios::binary);
     BMPIMAGE img;
 
     BMPread(file, img);
