@@ -5,16 +5,17 @@
 
 using namespace std;
 
+int total_num=0;
+
 int main(){
     ifstream input("./img/img1.bmp", std::ios::binary);
     ofstream output("./img/out.bmp", std::ios::binary);
     BMPIMAGE img;
-    int x=16;
-    int y=16;
-    int k=1;
-    int t=5;
-
-    cin>>x>>y>>k;
+    int x;
+    int y;
+    double loss;
+    int t;
+    cin>>x>>y>>loss>>t;
 
     BMPread(input, img);
     int width=img.bmInfoHeader.biWidth;
@@ -57,16 +58,16 @@ int main(){
                 }
             }
 
-            matrix Q1=lowRankApprox(P1, SVD(P1, k, t));
-            matrix Q2=lowRankApprox(P2, SVD(P2, k, t));
-            matrix Q3=lowRankApprox(P3, SVD(P3, k, t));
+            matrix Q1=lowRankApprox(P1, adaptiveSVD(P1, loss, t));
+            matrix Q2=lowRankApprox(P2, adaptiveSVD(P2, loss, t));
+            matrix Q3=lowRankApprox(P3, adaptiveSVD(P3, loss, t));
 
             for(int p=1;p<=blockH;p++){
                 for(int q=1;q<=blockW;q++){
                     Q1(p,q)=min(max(round(Q1(p,q)),0.0),255.0);
                     Q2(p,q)=min(max(round(Q2(p,q)),0.0),255.0);
                     Q3(p,q)=min(max(round(Q3(p,q)),0.0),255.0);
-
+                    
                     B1(i*x+p,j*y+q)=Q1(p,q);
                     G1(i*x+p,j*y+q)=Q2(p,q);
                     R1(i*x+p,j*y+q)=Q3(p,q);                    
@@ -75,6 +76,8 @@ int main(){
                     
         }
     }
+
+    cout<<double(width*height*3)/total_num<<endl;
 
     BMPIMG24CLR(img);
     BMPcolorWrite(img,R1,G1,B1);
